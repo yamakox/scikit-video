@@ -85,8 +85,8 @@ def test_FFmpegReader_16bits():
         assert(np.max(np.abs(frame8.astype('int32') -
                              (frame16//256).astype('int32'))) < 4)
         # then check that the mean difference is less than 1
-        assert(np.mean(np.abs(frame8.astype('float32') -
-                              (frame16//256).astype('float32'))) < 1.0)
+        assert(np.mean(np.abs(frame8.astype('np.float32') -
+                              (frame16//256).astype('np.float32'))) < 1.0)
         M, N, C = frame8.shape
         accumulation += np.sum(frame16//256)
         T += 1
